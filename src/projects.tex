@@ -1,0 +1,29 @@
+%-----------PROJECTS-----------%
+\section{Projects}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading
+    {\textbf{Adaptive Query Accelerator} $|$ \emph{C++20, CMake, mmap}}{}
+    \resumeItemListStart
+        \resumeItem{Built a high-performance persistent Key-Value Store with a custom storage engine using memory-mapped I/O and slotted-page layout, achieving \textbf{1.62M writes/sec} and \textbf{10.4M scan records/sec}.}
+        \resumeItem{Designed a two-tier caching architecture (L1 Record Cache + L2 Page Cache) with pluggable eviction policies (LRU, LFU, ScanResistant) and an order-1 Markov chain predictor for probabilistic prefetching (top-2 pages asynchronously) and eviction scoring, delivering \textbf{13.5x} warm vs. cold read speedup (0.11 µs vs. 1.48 µs).}
+        \resumeItem{Implemented an O(1) Hash Index with reader-writer locks for thread-safe concurrent access and an append-only write strategy for maximum throughput.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+    {\textbf{Distributed Task Queue} $|$ \emph{Python, gRPC, Apache Kafka, PostgreSQL, Redis, Kubernetes}}{}
+    \resumeItemListStart
+        \resumeItem{Architected a highly available distributed task queue targeting \textbf{10M+ tasks/day} with sub-millisecond P99 latency, using Kafka (12 partitions) for task distribution and Redis for rate limiting and deduplication.}
+        \resumeItem{Exposed a dual-protocol API (gRPC on port 50051 + REST on port 8080) supporting task submission, priority scheduling, retry with exponential backoff, cancellation, and real-time queue stats.}
+        \resumeItem{Integrated end-to-end observability via OpenTelemetry distributed tracing, Prometheus metrics, Grafana dashboards, and Loki structured logging; deployed workers on Kubernetes with Docker Compose for local dev.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+    {\textbf{Netflix Clone} $|$ \emph{Next.js 14, React, TypeScript, MongoDB, Prisma, NextAuth.js, Tailwind CSS}}{}
+    \resumeItemListStart
+        \resumeItem{Developed a full-stack streaming platform with multi-provider authentication (GitHub OAuth, Google OAuth, and credentials-based) using NextAuth.js with JWT sessions and bcrypt password hashing.}
+        \resumeItem{Built server-side rendered protected routes with \texttt{getServerSideProps}, a favorites system, and a responsive UI featuring an info modal, billboard, and movie browsing lists via custom SWR hooks.}
+        \resumeItem{Deployed on Vercel with MongoDB (Prisma ORM) as the data layer and Zustand for client-side state management.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
