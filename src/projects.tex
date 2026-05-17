@@ -19,11 +19,11 @@
     \resumeItemListEnd
 
     \resumeProjectHeading
-    {\textbf{Netflix Clone} $|$ \emph{Next.js 14, React, TypeScript, MongoDB, Prisma, NextAuth.js, Tailwind CSS} $|$ \href{https://github.com/abhikdps/netflix-clone}{\underline{GitHub}}}{}
+    {\textbf{Zero-Overhead Load Balancer} $|$ \emph{C, eBPF/XDP, libbpf, Linux Kernel} $|$ \href{https://github.com/abhikdps/zero-overhead-lb}{\underline{GitHub}}}{}
     \resumeItemListStart
-        \resumeItem{Developed a full-stack streaming platform with multi-provider authentication (GitHub OAuth, Google OAuth, and credentials-based) using NextAuth.js with JWT sessions and bcrypt password hashing.}
-        \resumeItem{Built server-side rendered protected routes with \texttt{getServerSideProps}, a favorites system, and a responsive UI featuring an info modal, billboard, and movie browsing lists via custom SWR hooks.}
-        \resumeItem{Deployed on Vercel with MongoDB (Prisma ORM) as the data layer and Zustand for client-side state management.}
+        \resumeItem{Built a Layer 4 (TCP/UDP) load balancer using eBPF/XDP that routes packets at the NIC driver level, completely bypassing the Linux kernel's networking stack achieving \textbf{300K+ PPS} in generic/SKB mode with near-zero CPU overhead.}
+        \resumeItem{Implemented connection affinity via a 262K-entry LRU hash map, weighted round-robin distribution, incremental L3/L4 checksum recalculation, and hitless backend reloads without detaching the XDP program.}
+        \resumeItem{Designed a control plane with TCP health checks (automatic failover), real-time observability via BPF ring buffer event streaming, and per-CPU lock-free stats counters; validated with scapy-based functional tests.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
