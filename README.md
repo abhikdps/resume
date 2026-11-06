@@ -1,6 +1,6 @@
 # Resume
 
-A two-page, text-based, single-column LaTeX resume for backend, platform engineering, and developer tools roles.
+A one-page, text-based, single-column LaTeX resume for backend, platform engineering, and developer tools roles.
 
 ## Structure
 
