@@ -1,29 +1,22 @@
-%-----------PROJECTS-----------%
 \section{Projects}
-\resumeSubHeadingListStart
+\par\noindent\begin{minipage}{\linewidth}
+\resumeProjectHeading{\textbf{Adaptive Query Accelerator} | C++20, CMake | \href{https://github.com/abhikdps/adaptive-query-accelerator}{github.com/abhikdps/adaptive-query-accelerator}}{}
+\resumeItemListStart
+  \resumeItem{Built a persistent key-value store with memory-mapped I/O, slotted pages, a hash index, and reader-writer locking; added tiered record/page caches, pluggable eviction policies, and Markov-based prefetching.}
+  \resumeItem{Benchmarked 10.4M records/sec for scans on an Apple M3 with a 1M-record dataset; documented reproduction steps and added recovery, concurrency, and storage tests.}
+\resumeItemListEnd
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\resumeProjectHeading{\textbf{Distributed Task Queue} | Python, Kafka, PostgreSQL, Redis | \href{https://github.com/abhikdps/distributed-task-queue}{GitHub}}{}
+\resumeItemListStart
+  \resumeItem{Built gRPC/REST APIs and workers for task submission, status queries, exponential-backoff retries, and cancellation; added Redis task caching, Kubernetes deployment, and OpenTelemetry/Prometheus observability.}
+\resumeItemListEnd
+\end{minipage}\par\vspace{4pt}
 
-    \resumeProjectHeading
-    {\textbf{Adaptive Query Accelerator} $|$ \emph{C++20, CMake, mmap} $|$ \href{https://github.com/abhikdps/adaptive-query-accelerator}{\underline{GitHub}}}{}
-    \resumeItemListStart
-        \resumeItem{Built a high-performance persistent Key-Value Store with a custom storage engine using memory-mapped I/O and slotted-page layout, achieving \textbf{1.62M writes/sec} and \textbf{10.4M scan records/sec}.}
-        \resumeItem{Designed a two-tier caching architecture (L1 Record Cache + L2 Page Cache) with pluggable eviction policies (LRU, LFU, ScanResistant) and an order-1 Markov chain predictor for probabilistic prefetching (top-2 pages asynchronously) and eviction scoring, delivering \textbf{13.5x} warm vs. cold read speedup (0.11 µs vs. 1.48 µs).}
-        \resumeItem{Implemented an O(1) Hash Index with reader-writer locks for thread-safe concurrent access and an append-only write strategy for maximum throughput.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading
-    {\textbf{Distributed Task Queue} $|$ \emph{Python, gRPC, Apache Kafka, PostgreSQL, Redis, Kubernetes} $|$ \href{https://github.com/abhikdps/distributed-task-queue}{\underline{GitHub}}}{}
-    \resumeItemListStart
-        \resumeItem{Designed and implemented a highly available microservices-based distributed task queue targeting \textbf{10M+ tasks/day} with sub-millisecond P99 latency, using Kafka (12 partitions) for task distribution and Redis for rate limiting and deduplication.}
-        \resumeItem{Exposed a dual-protocol API (gRPC on port 50051 + REST on port 8080) supporting task submission, priority scheduling, retry with exponential backoff, cancellation, and real-time queue stats.}
-        \resumeItem{Integrated end-to-end observability via OpenTelemetry distributed tracing, Prometheus metrics, Grafana dashboards, and Loki structured logging; deployed workers on Kubernetes with Docker Compose for local dev.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading
-    {\textbf{Zero-Overhead Load Balancer} $|$ \emph{C, eBPF/XDP, libbpf, Linux Kernel} $|$ \href{https://github.com/abhikdps/zero-overhead-lb}{\underline{GitHub}}}{}
-    \resumeItemListStart
-        \resumeItem{Built a Layer 4 (TCP/UDP) load balancer using eBPF/XDP that routes packets at the NIC driver level, completely bypassing the Linux kernel's networking stack achieving \textbf{300K+ PPS} in generic/SKB mode with near-zero CPU overhead.}
-        \resumeItem{Implemented connection affinity via a 262K-entry LRU hash map, weighted round-robin distribution, incremental L3/L4 checksum recalculation, and hitless backend reloads without detaching the XDP program.}
-        \resumeItem{Designed a control plane with TCP health checks (automatic failover), real-time observability via BPF ring buffer event streaming, and per-CPU lock-free stats counters; validated with scapy-based functional tests.}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
+\par\noindent\begin{minipage}{\linewidth}
+\resumeProjectHeading{\textbf{Zero-Overhead Load Balancer} | C, eBPF/XDP, libbpf | \href{https://github.com/abhikdps/zero-overhead-lb}{GitHub}}{}
+\resumeItemListStart
+  \resumeItem{Built a Layer 4 TCP/UDP load balancer with eBPF/XDP packet forwarding, connection affinity, weighted backend selection, and incremental IP/transport checksum updates.}
+  \resumeItem{Implemented TCP health checks, backend configuration reloads without detaching the XDP program, BPF ring-buffer event streaming, and per-CPU statistics; validated packet behavior with Scapy-based functional tests.}
+\resumeItemListEnd
+\end{minipage}\par\vspace{4pt}
